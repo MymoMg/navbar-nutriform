@@ -15,6 +15,7 @@ export default function Navbar() {
 
   return (
     <header className={styles.header}>
+        <a class="logo" href="index.html" aria-label="Accueil NutriForm - Retour à la page d'accueil">NutriForm</a>
 
         <ul className={`${styles.burger} ${open ? styles.open : ""}`}
           onClick={() => setOpen(!open)}
