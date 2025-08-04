@@ -1,23 +1,10 @@
-
-
 .header {
   text-align: center;
   margin-bottom: 40px;
-}
-
-.container {
   padding: 15px 20px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 30px auto;
-}
-
-.logo {
-  font-family: var(--font-titre);
-  font-size: 24px;
-  text-decoration: none;
-  color: var(--couleur-text-noir);
 }
 
 /* Menu burger */
@@ -27,7 +14,7 @@
   cursor: pointer;
 }
 
-.burger span {
+.burger li {
   border: 2px solid black;
   margin: 5px;
   width: 40px;
@@ -35,20 +22,20 @@
   transition: all 0.8s ease;
 }
 
-.burger span a {
+.burger li a {
   opacity: 0;
   transition: all 0.8s ease;
   display: none;
   color: var(--couleur-text-noir);
 }
 
-.burgerToggle:checked ~ .burger span {
+.burger.open li {
   width: 150px;
   height: 40px;
   border-radius: 10px;
 }
 
-.burgerToggle:checked ~ .burger span a {
+.burger.open li a {
   opacity: 1;
   display: flex;
   justify-content: center;
@@ -56,11 +43,8 @@
   text-decoration: none;
 }
 
-.burgerToggle {
-  display: none;
-}
 
-.org {
+.burger li.org {
   border: 2px solid var(--couleur-bouton-action);
 }
 
@@ -68,3 +52,47 @@
   color: var(--couleur-text-noir);
   text-decoration: none;
 }
+
+
+@media (min-width: 768px) {
+
+        .burger li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            width: 150px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .burger li.org a {
+            display: flex;
+        }
+
+        .burger li a {
+            opacity: 1;
+            display: flex;
+            padding: 5px 70px;
+            text-decoration: none;
+        }
+        
+        .burger li:hover {
+            background-color: var(--couleur-text-noir);
+        }
+
+        .burger li a:hover {
+            color: var(--couleur-principale);
+            border-color: var(--couleur-text-noir);
+        }
+
+
+        .burger li.org:hover {
+            background-color: var(--couleur-bouton-action);
+        }
+
+        .burger li.org a:hover {
+            color: var(--couleur-principale);
+            border-color: var(--couleur-text-noir);
+        }
+    }

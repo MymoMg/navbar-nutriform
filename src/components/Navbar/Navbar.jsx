@@ -15,26 +15,18 @@ export default function Navbar() {
 
   return (
     <header className={styles.header}>
-      <div className={styles.container}>
 
-        <input
-          type="checkbox"
-          id="burger-toggle"
-          className={styles.burgerToggle}
-          checked={open}
-          onChange={() => setOpen(!open)}
-        />
-
-        <label htmlFor="burger-toggle" className={styles.burger}>
+        <ul className={`${styles.burger} ${open ? styles.open : ""}`}
+          onClick={() => setOpen(!open)}
+        >
           {links.map((link, index) => (
-            <span key={index} className={link.special ? styles.org : ""}>
+            <li key={index} className={link.special ? styles.org : ""}>
               <a className={link.special ? styles.orange : ""} href={link.path}>
                 {link.label}
               </a>
-            </span>
+            </li>
           ))}
-        </label>
-      </div>
+        </ul>
     </header>
   );
 }
